@@ -7,7 +7,7 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   head: [
-    ['meta', { name: 'theme-color', content: '#ea4e82' }],
+    ['meta', { name: 'theme-color', content: '#6366f1' }],
     ['meta', { property: 'og:title', content: 'wx-miniprogram-starter' }],
     ['meta', { property: 'og:description', content: '通用微信小程序项目骨架' }],
   ],
