@@ -1,0 +1,63 @@
+.container {
+  padding: 32rpx 24rpx;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  margin-bottom: 32rpx;
+}
+
+.btn {
+  padding: 24rpx 32rpx;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-family: "PFM";
+  font-size: var(--font-base);
+}
+
+.btn-secondary {
+  background: var(--color-border-light);
+  color: var(--color-text-primary);
+}
+
+.result {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  padding: 24rpx;
+  box-shadow: var(--shadow-sm);
+}
+
+.result-title {
+  font-family: "PFS";
+  font-size: var(--font-base);
+  color: var(--color-text-primary);
+  margin-bottom: 16rpx;
+}
+
+.result-content {
+  font-family: "PFR";
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  word-break: break-all;
+}
+
+.result.error {
+  border: 1rpx solid var(--color-error);
+}
+
+.result.error .result-title {
+  color: var(--color-error);
+}
+
+.hint {
+  text-align: center;
+  color: var(--color-text-tertiary);
+  font-family: "PFR";
+  font-size: var(--font-sm);
+  padding: 80rpx 32rpx;
+  line-height: 1.8;
+}

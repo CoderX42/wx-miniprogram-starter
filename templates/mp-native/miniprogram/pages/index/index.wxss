@@ -1,0 +1,76 @@
+.container {
+  padding: 32rpx 24rpx;
+}
+
+.header {
+  text-align: center;
+  padding: 80rpx 0 60rpx;
+}
+
+.title {
+  font-family: "PFS";
+  font-size: 56rpx;
+  color: var(--color-primary);
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  font-family: "PFR";
+  font-size: var(--font-sm);
+  color: var(--color-text-tertiary);
+}
+
+.list {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 24rpx;
+  border-bottom: 1rpx solid var(--color-border-light);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-title {
+  flex: 1;
+  font-family: "PFM";
+  font-size: var(--font-base);
+  color: var(--color-text-primary);
+}
+
+.list-desc {
+  font-family: "PFR";
+  font-size: var(--font-sm);
+  color: var(--color-text-tertiary);
+  margin-top: 8rpx;
+}
+
+.list-title {
+  display: block;
+}
+
+.list-item .list-title,
+.list-item .list-desc {
+  flex: 1;
+}
+
+.list-arrow {
+  color: var(--color-text-tertiary);
+  font-size: 36rpx;
+  margin-left: 16rpx;
+}
+
+.footer {
+  text-align: center;
+  padding: 60rpx 0;
+  font-family: "PFL";
+  font-size: var(--font-xs);
+  color: var(--color-text-tertiary);
+}

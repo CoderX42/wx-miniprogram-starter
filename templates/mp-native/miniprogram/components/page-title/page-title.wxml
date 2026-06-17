@@ -1,0 +1,11 @@
+<view
+  class="page-title"
+  style="background:{{background}};padding-top:{{menuInfo.top}}px;height:{{menuInfo.top + menuInfo.height}}px;"
+>
+  <view wx:if="{{back}}" class="back-btn" bindtap="onBack">
+    <view class="back-icon" />
+  </view>
+  <view class="title-text" style="color:{{color}};">{{title}}</view>
+  <slot></slot>
+</view>
+<view class="placeholder" style="height:{{menuInfo.top + menuInfo.height}}px;" />

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "模板演示",
+  "usingComponents": {
+    "page-title": "/components/page-title/page-title"
+  }
+}

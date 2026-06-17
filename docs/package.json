@@ -1,0 +1,15 @@
+{
+  "name": "@wx-starter/docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Documentation site for wx-miniprogram-starter",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.20"
+  }
+}

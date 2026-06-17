@@ -1,0 +1,53 @@
+/**
+ * uni.scss — 全局 SCSS 变量
+ * 业务代码应使用这些变量而非硬编码颜色/字号
+ */
+
+/* 主色 */
+$color-primary: #ea4e82;
+$color-primary-light: #f28cb3;
+$color-primary-bg: #fceff2;
+
+/* 文字 */
+$color-text-primary: #252525;
+$color-text-secondary: #4d4d4d;
+$color-text-tertiary: #b3b3b3;
+$color-text-inverse: #ffffff;
+
+/* 背景 */
+$color-bg: #f7f8f8;
+$color-bg-card: #ffffff;
+
+/* 边框 */
+$color-border: #e5e5e5;
+$color-border-light: #f2f2f2;
+
+/* 状态 */
+$color-success: #07c160;
+$color-warning: #ff976a;
+$color-error: #ee0a24;
+
+/* 字号 */
+$font-xs: 20rpx;
+$font-sm: 24rpx;
+$font-base: 28rpx;
+$font-md: 30rpx;
+$font-lg: 32rpx;
+$font-xl: 36rpx;
+$font-2xl: 40rpx;
+$font-3xl: 48rpx;
+
+/* 间距 */
+$space-xs: 8rpx;
+$space-sm: 16rpx;
+$space-base: 24rpx;
+$space-md: 32rpx;
+$space-lg: 48rpx;
+$space-xl: 64rpx;
+
+/* 圆角 */
+$radius-sm: 8rpx;
+$radius-base: 16rpx;
+$radius-md: 24rpx;
+$radius-lg: 32rpx;
+$radius-full: 9999rpx;

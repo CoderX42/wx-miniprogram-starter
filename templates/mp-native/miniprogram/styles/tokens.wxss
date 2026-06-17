@@ -1,0 +1,74 @@
+/**
+ * Design Tokens — 设计令牌
+ * 业务方应通过修改以下变量来调整主题色、字号等
+ * 禁止在业务代码中硬编码颜色或字号
+ */
+
+page {
+  /* === 主色 === */
+  --color-primary: #ea4e82;
+  --color-primary-light: #f28cb3;
+  --color-primary-bg: #fceff2;
+
+  /* === 文字 === */
+  --color-text-primary: #252525;
+  --color-text-secondary: #4d4d4d;
+  --color-text-tertiary: #b3b3b3;
+  --color-text-inverse: #ffffff;
+
+  /* === 背景 === */
+  --color-bg: #f7f8f8;
+  --color-bg-card: #ffffff;
+  --color-bg-mask: rgba(0, 0, 0, 0.5);
+
+  /* === 边框 === */
+  --color-border: #e5e5e5;
+  --color-border-light: #f2f2f2;
+
+  /* === 状态 === */
+  --color-success: #07c160;
+  --color-warning: #ff976a;
+  --color-error: #ee0a24;
+
+  /* === 字号（rpx） === */
+  --font-xs: 20rpx;
+  --font-sm: 24rpx;
+  --font-base: 28rpx;
+  --font-md: 30rpx;
+  --font-lg: 32rpx;
+  --font-xl: 36rpx;
+  --font-2xl: 40rpx;
+  --font-3xl: 48rpx;
+
+  /* === 字重 === */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* === 间距（rpx） === */
+  --space-xs: 8rpx;
+  --space-sm: 16rpx;
+  --space-base: 24rpx;
+  --space-md: 32rpx;
+  --space-lg: 48rpx;
+  --space-xl: 64rpx;
+
+  /* === 圆角 === */
+  --radius-sm: 8rpx;
+  --radius-base: 16rpx;
+  --radius-md: 24rpx;
+  --radius-lg: 32rpx;
+  --radius-full: 9999rpx;
+
+  /* === 阴影 === */
+  --shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+  --shadow-base: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.12);
+
+  /* === Vant 主题覆盖 === */
+  --primary-color: var(--color-primary);
+  --button-primary-background-color: var(--color-primary);
+  --button-primary-border-color: var(--color-primary);
+}

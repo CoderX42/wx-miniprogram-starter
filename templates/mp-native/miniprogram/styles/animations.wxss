@@ -1,0 +1,40 @@
+/**
+ * 通用动画 — keyframes 库
+ * 业务方按需引用
+ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate3d(0, 30rpx, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translate3d(0, -30rpx, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+.anim-fade-in { animation: fadeIn 0.3s ease both; }
+.anim-fade-in-up { animation: fadeInUp 0.3s ease both; }
+.anim-fade-in-down { animation: fadeInDown 0.3s ease both; }
+.anim-scale-in { animation: scaleIn 0.3s ease both; }
+.anim-spin { animation: spin 1s linear infinite; }

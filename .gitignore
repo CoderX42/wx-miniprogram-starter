@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+*/node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+miniprogram_npm/
+*/miniprogram_npm/
+**/miniprogram_npm/
+unpackage/
+*/unpackage/
+**/unpackage/
+
+# Generated
+packages/core/src/cdn.js
+templates/*/miniprogram/cdn.js
+templates/*/miniprogram/iconfont/iconfont.js
+templates/*/miniprogram/iconfont/iconfont.wxss
+templates/*/miniprogram/iconfont/iconfont.woff
+templates/*/miniprogram/iconfont/iconfont.ttf
+templates/*/miniprogram/iconfont/iconfont.css
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local config
+project.private.config.json
+*/project.private.config.json
+
+# VitePress
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+
+# Coverage
+coverage/
+*.lcov
+
+# Misc
+.cache/
+.tmp/
+*.tgz

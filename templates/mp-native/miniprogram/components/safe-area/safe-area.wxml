@@ -1,0 +1,7 @@
+<view class="safe-area" style="background:{{bg}};">
+  <view wx:if="{{top}}" class="safe-top" style="height:{{safeTop}}px;" />
+  <view class="safe-content">
+    <slot></slot>
+  </view>
+  <view wx:if="{{bottom}}" class="safe-bottom" style="height:{{safeBottom}}px;" />
+</view>

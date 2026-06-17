@@ -1,0 +1,61 @@
+.container {
+  padding: 32rpx 24rpx;
+}
+
+.form {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  padding: 32rpx 24rpx;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-item {
+  margin-bottom: 32rpx;
+}
+
+.form-label {
+  font-family: "PFM";
+  font-size: var(--font-base);
+  color: var(--color-text-primary);
+  margin-bottom: 12rpx;
+}
+
+.form-input {
+  background: var(--color-bg);
+  border-radius: var(--radius-base);
+  padding: 20rpx 24rpx;
+  font-family: "PFR";
+  font-size: var(--font-base);
+  color: var(--color-text-primary);
+  min-height: 80rpx;
+  box-sizing: border-box;
+}
+
+.form-error {
+  color: var(--color-error);
+  font-size: var(--font-sm);
+  margin-top: 8rpx;
+  font-family: "PFR";
+}
+
+.form-actions {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 48rpx;
+}
+
+.btn {
+  flex: 1;
+  padding: 24rpx 32rpx;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-family: "PFM";
+  font-size: var(--font-base);
+}
+
+.btn-secondary {
+  background: var(--color-border-light);
+  color: var(--color-text-primary);
+}

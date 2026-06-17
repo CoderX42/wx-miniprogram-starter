@@ -1,0 +1,33 @@
+/**
+ * 字体定义 — 4 字体体系
+ * 业务方应只使用这 4 个字体族名，禁止定义新字体
+ *
+ * - PFM: PingFang Medium (正文、按钮)
+ * - PFR: PingFang Regular (辅助、说明)
+ * - PFS: PingFang Semibold (标题)
+ * - PFL: PingFang Light (注释、占位)
+ */
+
+@font-face {
+  font-family: "PFM";
+  src: url("https://cdn.example.com/fonts/PingFang-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "PFR";
+  src: url("https://cdn.example.com/fonts/PingFang-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "PFS";
+  src: url("https://cdn.example.com/fonts/PingFang-Semibold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "PFL";
+  src: url("https://cdn.example.com/fonts/PingFang-Light.ttf") format("truetype");
+  font-weight: 300;
+}

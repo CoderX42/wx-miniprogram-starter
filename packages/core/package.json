@@ -1,0 +1,49 @@
+{
+  "name": "@wx-starter/core",
+  "version": "0.1.0",
+  "description": "跨技术栈核心库 — HTTP、Storage、Auth、Emitter、Router、Formatter、Validator",
+  "type": "module",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./http": "./src/http/index.js",
+    "./emitter": "./src/emitter.js",
+    "./storage": "./src/storage.js",
+    "./auth": "./src/auth.js",
+    "./router": "./src/router.js",
+    "./formatter": "./src/formatter.js",
+    "./validator": "./src/validator.js",
+    "./env": "./src/env.js",
+    "./event-constants": "./src/event-constants.js"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.1",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ]
+  },
+  "keywords": [
+    "wechat",
+    "miniprogram",
+    "uni-app",
+    "http-client",
+    "storage",
+    "auth",
+    "emitter"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,26 @@
+<page-title title="模板演示" back="{{false}}" />
+
+<view class="container">
+  <view class="header">
+    <view class="title">wx-miniprogram-starter</view>
+    <view class="subtitle">原生小程序模板演示</view>
+  </view>
+
+  <view class="list">
+    <view
+      class="list-item"
+      wx:for="{{list}}"
+      wx:key="id"
+      bindtap="jumpTo"
+      data-page="{{item.id}}"
+    >
+      <view class="list-title">{{item.title}}</view>
+      <view class="list-desc">{{item.desc}}</view>
+      <view class="list-arrow">›</view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <text>core lib + native template</text>
+  </view>
+</view>

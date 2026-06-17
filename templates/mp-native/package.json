@@ -1,0 +1,21 @@
+{
+  "name": "mp-native-template",
+  "version": "0.1.0",
+  "description": "原生小程序模板 — 基于 WXML/JS，依赖 Vant Weapp",
+  "private": true,
+  "scripts": {
+    "iconfont": "node scripts/iconfont-sync.js",
+    "cdn-image": "node scripts/cdn-image.js",
+    "new:page": "node scripts/new-page.js",
+    "new:component": "node scripts/new-component.js",
+    "deploy": "bash scripts/deploy.sh"
+  },
+  "dependencies": {
+    "@vant/weapp": "^1.11.7",
+    "@wx-starter/core": "^0.1.0",
+    "miniprogram-computed": "^6.0.2"
+  },
+  "devDependencies": {
+    "mini-program-iconfont-cli": "^0.6.1"
+  }
+}

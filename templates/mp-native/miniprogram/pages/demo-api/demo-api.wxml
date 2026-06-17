@@ -1,0 +1,25 @@
+<page-title title="API 调用示例" back="{{true}}" />
+
+<view class="container">
+  <view class="actions">
+    <view class="btn" bindtap="fetchUserInfo">调用 user.info</view>
+    <view class="btn" bindtap="fetchWithTimeout">调用（5s 超时）</view>
+    <view class="btn btn-secondary" bindtap="clear">清空</view>
+  </view>
+
+  <loading wx:if="{{loading}}" type="page" text="加载中..." />
+
+  <view wx:elif="{{error}}" class="result error">
+    <view class="result-title">错误</view>
+    <view class="result-content">{{error}}</view>
+  </view>
+
+  <view wx:elif="{{result}}" class="result">
+    <view class="result-title">响应数据</view>
+    <view class="result-content">{{result}}</view>
+  </view>
+
+  <view wx:else class="hint">
+    <text>点击上方按钮发起请求\n请求 URL 与后端交互由 utils/api.js 定义</text>
+  </view>
+</view>

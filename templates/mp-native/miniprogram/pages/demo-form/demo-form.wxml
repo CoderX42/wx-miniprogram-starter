@@ -1,0 +1,64 @@
+<page-title title="表单示例" back="{{true}}" />
+
+<view class="container">
+  <view class="form">
+    <view class="form-item">
+      <view class="form-label">姓名</view>
+      <input
+        class="form-input"
+        value="{{form.name}}"
+        placeholder="请输入姓名"
+        bindinput="inputChange"
+        data-field="form.name"
+      />
+      <view wx:if="{{errors.name}}" class="form-error">{{errors.name}}</view>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">年龄</view>
+      <input
+        class="form-input"
+        type="number"
+        value="{{form.age}}"
+        placeholder="请输入年龄"
+        bindinput="inputChange"
+        data-field="form.age"
+        data-type="integer"
+      />
+      <view wx:if="{{errors.age}}" class="form-error">{{errors.age}}</view>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">性别</view>
+      <picker
+        mode="selector"
+        range="{{genderList}}"
+        value="{{form.gender}}"
+        bindchange="pickerChange"
+        data-field="form.gender"
+        data-range="genderList"
+      >
+        <view class="form-input">{{genderList[form.gender] || '请选择'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">爱好</view>
+      <picker
+        mode="selector"
+        range="{{hobbyList}}"
+        value="{{form.hobby}}"
+        bindchange="pickerChange"
+        data-field="form.hobby"
+        data-range="hobbyList"
+      >
+        <view class="form-input">{{hobbyList[form.hobby] || '请选择'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-actions">
+      <view class="btn btn-secondary" bindtap="onReset">重置</view>
+      <view class="btn" bindtap="onSubmit">提交</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^page-title$": "@/components/page-title/page-title.vue",
+      "^safe-area$": "@/components/safe-area/safe-area.vue",
+      "^empty$": "@/components/empty/empty.vue",
+      "^loading$": "@/components/loading/loading.vue",
+      "^error-block$": "@/components/error-block/error-block.vue",
+      "^popup$": "@/components/popup/popup.vue"
+    }
+  },
+  "pages": [
+    { "path": "pages/index/index", "style": { "navigationBarTitleText": "模板演示" } },
+    { "path": "pages/demo-api/demo-api", "style": { "navigationBarTitleText": "API 示例" } },
+    { "path": "pages/demo-components/demo-components", "style": { "navigationBarTitleText": "组件示例" } },
+    { "path": "pages/demo-form/demo-form", "style": { "navigationBarTitleText": "表单示例" } }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app 模板",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f7f8f8",
+    "navigationStyle": "custom"
+  }
+}

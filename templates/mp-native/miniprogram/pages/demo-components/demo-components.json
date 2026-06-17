@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "组件示例",
+  "usingComponents": {
+    "page-title": "/components/page-title/page-title",
+    "safe-area": "/components/safe-area/safe-area",
+    "empty": "/components/empty/empty",
+    "loading": "/components/loading/loading",
+    "error-block": "/components/error-block/error-block",
+    "popup": "/components/popup/popup"
+  }
+}

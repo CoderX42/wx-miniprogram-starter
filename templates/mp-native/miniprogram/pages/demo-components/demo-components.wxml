@@ -1,0 +1,59 @@
+<page-title title="核心组件示例" back="{{true}}" />
+
+<view class="container">
+  <view class="section">
+    <view class="section-title">Safe Area（安全区）</view>
+    <view class="card">
+      <text>用于适配顶部状态栏 + 底部安全区</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">Loading（加载中）</view>
+    <loading wx:if="{{loading}}" type="page" text="加载中..." />
+    <view wx:else class="card">
+      <text>当前已加载 {{list.length}} 条</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">Empty（空态）</view>
+    <view class="card">
+      <empty
+        wx:if="{{showEmpty}}"
+        text="还没有任何数据"
+        button-text="点我试试"
+        bind:click="onEmptyClick"
+      />
+      <view wx:else class="muted">空态已隐藏</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">Error Block（错误占位）</view>
+    <view class="card">
+      <error-block
+        wx:if="{{showError}}"
+        text="网络异常，请稍后重试"
+        bind:retry="onErrorRetry"
+      />
+      <view wx:else class="muted">未触发</view>
+      <view class="btn mt-16" bindtap="showErrorBlock">触发错误</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">Popup（弹窗）</view>
+    <view class="card">
+      <view class="btn" bindtap="togglePopup">打开弹窗</view>
+    </view>
+  </view>
+
+  <popup show="{{showPopup}}" position="center" bind:close="onPopupClose">
+    <view class="popup-inner">
+      <view class="popup-title">标题</view>
+      <view class="popup-text">这是一个通用弹窗，支持 5 个方向。</view>
+      <view class="btn mt-16" bindtap="onPopupClose">关闭</view>
+    </view>
+  </popup>
+</view>

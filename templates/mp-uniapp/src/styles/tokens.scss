@@ -1,0 +1,16 @@
+// tokens.scss — 设计令牌（同 uni.scss，但用于 JS 引用场景）
+// 在 .vue 中应使用 :style 或 props 传递这些值
+
+:root {
+  --color-primary: #ea4e82;
+  --color-primary-light: #f28cb3;
+  --color-text-primary: #252525;
+  --color-text-secondary: #4d4d4d;
+  --color-text-tertiary: #b3b3b3;
+  --color-bg: #f7f8f8;
+  --color-bg-card: #ffffff;
+  --color-border: #e5e5e5;
+  --color-success: #07c160;
+  --color-warning: #ff976a;
+  --color-error: #ee0a24;
+}

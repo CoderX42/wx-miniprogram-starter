@@ -1,0 +1,29 @@
+{
+  "name": "wx-miniprogram-starter",
+  "version": "0.1.0",
+  "description": "通用微信小程序项目骨架 — 包含 core 库、原生小程序模板、uni-app 模板、完整文档站",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "templates/*",
+    "docs"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{js,cjs,json,md,vue,scss,wxss}\"",
+    "docs:dev": "npm run dev --workspace=docs",
+    "docs:build": "npm run build --workspace=docs",
+    "core:test": "npm test --workspace=@wx-starter/core"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,9 @@
+<view class="empty">
+  <view class="empty-image">
+    <image wx:if="{{image}}" src="{{image}}" mode="aspectFit" />
+    <view wx:else class="empty-icon" />
+  </view>
+  <view class="empty-text">{{text}}</view>
+  <view wx:if="{{buttonText}}" class="empty-btn" bindtap="onTap">{{buttonText}}</view>
+  <slot></slot>
+</view>

@@ -1,0 +1,6 @@
+<view wx:if="{{show}}" class="popup-root" style="z-index:{{zIndex}};">
+  <view wx:if="{{mask}}" class="popup-mask" bindtap="onMaskTap" />
+  <view class="popup-content popup-{{position}}">
+    <slot></slot>
+  </view>
+</view>

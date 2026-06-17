@@ -1,0 +1,23 @@
+/**app.wxss**/
+@import "./styles/tokens.wxss";
+@import "./styles/fonts.wxss";
+@import "./styles/animations.wxss";
+
+page {
+  font-family: "PFM";
+  background-color: var(--color-bg);
+  height: 100%;
+  font-size: var(--font-base);
+  color: var(--color-text-primary);
+}
+
+.g-flex { display: flex; }
+.g-flex-col { display: flex; flex-direction: column; }
+.g-flex-1 { flex: 1; }
+.g-flex-center { display: flex; align-items: center; justify-content: center; }
+.g-flex-between { display: flex; align-items: center; justify-content: space-between; }
+.g-text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

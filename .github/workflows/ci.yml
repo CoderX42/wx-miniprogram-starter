@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+  test:
+    name: Test core
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      - name: Test core
+        run: npm test --workspace=@wx-starter/core
+
+  build-templates:
+    name: Build templates
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        template: [mp-native, mp-uniapp]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      - name: Verify template files
+        run: |
+          if [ ! -d "templates/${{ matrix.template }}" ]; then
+            echo "Template directory missing: templates/${{ matrix.template }}"
+            exit 1
+          fi
+          echo "Template structure:"
+          ls -la "templates/${{ matrix.template }}"
+
+      - name: Validate package.json
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('templates/${{ matrix.template }}/package.json', 'utf8'))"
+          echo "package.json is valid JSON"
