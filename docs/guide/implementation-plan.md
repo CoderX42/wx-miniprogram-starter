@@ -1,6 +1,6 @@
 # 实现规划
 
-本文档是项目实现规划的设计部分摘要。**完整版本（含详细步骤、文件清单、验证方案）请看仓库根目录的 [PLAN.md](https://github.com/your-org/wx-miniprogram-starter/blob/main/PLAN.md)**。
+本文档是项目实现规划的设计部分摘要。**完整版本（含详细步骤、文件清单、验证方案）请看仓库根目录的 [PLAN.md](https://github.com/CoderX42/wx-miniprogram-starter/blob/main/PLAN.md)**。
 
 ## Context
 
@@ -59,4 +59,4 @@
 
 ## 详细规划
 
-完整的目录结构、文件清单、验证方案、实施约束请查看 [PLAN.md](https://github.com/your-org/wx-miniprogram-starter/blob/main/PLAN.md)（项目根目录）。
+完整的目录结构、文件清单、验证方案、实施约束请查看 [PLAN.md](https://github.com/CoderX42/wx-miniprogram-starter/blob/main/PLAN.md)（项目根目录）。

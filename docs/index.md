@@ -11,7 +11,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: GitHub
-      link: https://github.com/
+      link: https://github.com/CoderX42/wx-miniprogram-starter
 
 features:
   - title: 📦 跨技术栈 core 库

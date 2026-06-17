@@ -1,26 +1,57 @@
-<page-title title="模板演示" back="{{false}}" />
+<page-title title="INDEX" back="{{false}}" />
 
 <view class="container">
-  <view class="header">
-    <view class="title">wx-miniprogram-starter</view>
-    <view class="subtitle">原生小程序模板演示</view>
+  <view class="meta-row">
+    <text class="meta-no">No. 001 / 2026</text>
+    <view class="meta-rule"></view>
+    <text class="meta-tag">STARTER KIT</text>
   </view>
 
-  <view class="list">
+  <view class="display">
+    <view class="display-line d-1">wx-mini</view>
+    <view class="display-line d-2">program</view>
+    <view class="display-line d-3">starter<text class="period">.</text></view>
+  </view>
+
+  <view class="intro">
+    <view class="accent"></view>
+    <view class="intro-body">
+      <view class="intro-title">原生小程序模板演示</view>
+      <view class="intro-meta">templates / mp-native · WXML + WXSS</view>
+    </view>
+  </view>
+
+  <view class="rule"></view>
+
+  <view class="nav" role="list" aria-label="演示页面导航">
     <view
-      class="list-item"
+      class="nav-item"
       wx:for="{{list}}"
       wx:key="id"
       bindtap="jumpTo"
       data-page="{{item.id}}"
+      hover-class="nav-item--active"
+      hover-stay-time="80"
+      role="listitem"
+      aria-label="{{item.title}} — {{item.desc}}"
     >
-      <view class="list-title">{{item.title}}</view>
-      <view class="list-desc">{{item.desc}}</view>
-      <view class="list-arrow">›</view>
+      <text class="nav-num">{{item.no}}</text>
+      <view class="nav-content">
+        <view class="nav-title">{{item.title}}</view>
+        <view class="nav-desc">{{item.desc}}</view>
+      </view>
+      <view class="nav-arrow">
+        <view class="arrow-bar"></view>
+        <view class="arrow-head"></view>
+      </view>
     </view>
   </view>
 
   <view class="footer">
-    <text>core lib + native template</text>
+    <view class="rule rule--soft"></view>
+    <view class="footer-row">
+      <text class="footer-mark">core lib + native template</text>
+      <text class="footer-mark">v0.1.0 · © 2026</text>
+    </view>
   </view>
 </view>

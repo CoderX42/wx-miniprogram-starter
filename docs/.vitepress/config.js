@@ -89,7 +89,7 @@ export default defineConfig({
       ],
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/' },
+      { icon: 'github', link: 'https://github.com/CoderX42/wx-miniprogram-starter' },
     ],
     footer: {
       message: 'Released under the MIT License.',

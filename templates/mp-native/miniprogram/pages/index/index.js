@@ -3,9 +3,9 @@ const createPage = require('../../pages-base');
 createPage({
   data: {
     list: [
-      { id: 'demo-api', title: 'API 调用示例', desc: '演示如何用 HttpClient 发起请求' },
-      { id: 'demo-components', title: '核心组件示例', desc: '展示 6 个核心组件的使用' },
-      { id: 'demo-form', title: '表单示例', desc: '演示 form behavior 的 inputChange / pickerChange' },
+      { id: 'demo-api', no: '01', title: 'API 调用示例', desc: '演示 HttpClient 的请求与拦截' },
+      { id: 'demo-components', no: '02', title: '核心组件示例', desc: '展示 6 个核心组件的使用' },
+      { id: 'demo-form', no: '03', title: '表单示例', desc: 'form behavior · inputChange / pickerChange' },
     ],
   },
   onLoad() {
