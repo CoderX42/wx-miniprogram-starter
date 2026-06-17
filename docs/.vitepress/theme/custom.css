@@ -1,123 +1,495 @@
-/* Splash 欢迎页样式 */
+/* =============================================================
+   文档站欢迎页样式（docs/index.md）
+   品牌色对齐 templates 的 #ea4e82（粉），不再用微信绿
+
+   关键约束：markdown 内容被包在 <article class="vp-doc"> 里，
+   vp-doc 默认 max-width: 720px + 强 typography 样式会盖过我们的设计。
+   解法：用 .vp-doc:has(.home-hero) 锁 home 页，再用 .vp-doc h1.home-X
+   等高优先级选择器顶住 vp-doc 的 h1/h2/p/a 默认样式。
+   ============================================================= */
+
 :root {
-  --splash-brand: #1aad19;
-  --splash-brand-2: #07c160;
-  --splash-text: #1f2937;
-  --splash-text-muted: #6b7280;
+  /* VitePress 品牌色覆盖（影响按钮、链接、active 状态） */
+  --vp-c-brand-1: #ea4e82;
+  --vp-c-brand-2: #f28cb3;
+  --vp-c-brand-3: #c93a6c;
+  --vp-c-brand-soft: rgba(234, 78, 130, 0.14);
+
+  --vp-button-brand-bg: #ea4e82;
+  --vp-button-brand-hover-bg: #d63e72;
+  --vp-button-brand-active-bg: #c13566;
+
+  /* 项目自用 token（与 templates 的 tokens.wxss 对齐） */
+  --splash-brand: #ea4e82;
+  --splash-brand-hover: #d63e72;
+  --splash-brand-active: #c13566;
+  --splash-brand-soft: rgba(234, 78, 130, 0.08);
+  --splash-text: #1f1f1f;
+  --splash-text-muted: #707070;
+  --splash-bg: #f7f8f8;
+  --splash-card: #ffffff;
+  --splash-border: #e5e5e5;
+  --splash-border-soft: #f2f2f2;
+  --splash-radius: 12px;
+  --splash-radius-lg: 20px;
 }
 
-/* 全屏 splash — 仅在 home 布局生效 */
-.VPHero .container .main .name,
-.VPHero .container .main .text {
-  background: linear-gradient(120deg, var(--splash-brand) 30%, var(--splash-brand-2));
+/* ---------- Home 页 vp-doc 容器：解除 720px 限制 ---------- */
+.vp-doc:has(.home-hero) {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* home 页内 p、a 元素：去掉 vp-doc 的下划线和过大行高 */
+.vp-doc:has(.home-hero) p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.vp-doc:has(.home-hero) a {
+  color: var(--splash-brand);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.vp-doc:has(.home-hero) a:hover {
+  color: var(--splash-brand-hover);
+}
+
+/* =============================================================
+   HERO
+   ============================================================= */
+.home-hero {
+  padding: 96px 24px 64px;
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.home-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 480px;
+  background: radial-gradient(60% 60% at 50% 0%, rgba(234, 78, 130, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.home-hero__logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 28px;
+  display: block;
+  color: var(--splash-brand);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* 顶住 vp-doc h1 默认样式（font-size 32px、line-height 40px、letter-spacing） */
+.vp-doc h1.home-hero__name {
+  font-size: 56px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1.5px !important;
+  margin: 0 0 12px !important;
+  color: var(--splash-text);
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+.home-hero__name .accent {
+  background: linear-gradient(120deg, var(--splash-brand) 0%, #f28cb3 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: -1px;
 }
 
-.VPHero .container .main .name {
-  font-size: 56px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.VPHero .container .main .text {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-
-.VPHero .container .main .tagline {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--splash-text-muted);
-  max-width: 640px;
-  margin-bottom: 40px;
-}
-
-.VPHero .container .main .actions {
-  gap: 16px;
-}
-
-.VPHero .container .main .actions .action.primary {
-  background: linear-gradient(135deg, var(--splash-brand), var(--splash-brand-2));
-  border: none;
-  font-size: 16px;
-  padding: 12px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 6px 20px rgba(26, 173, 25, 0.25);
-}
-
-.VPHero .container .main .actions .action.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(26, 173, 25, 0.35);
-}
-
-.VPHero .container .main .actions .action.alt {
-  font-size: 16px;
-  padding: 12px 28px;
-  border-radius: 10px;
-  border: 2px solid #e5e7eb;
+.vp-doc p.home-hero__text {
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.5px !important;
+  margin: 0 0 20px !important;
   color: var(--splash-text);
-  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.VPHero .container .main .actions .action.alt:hover {
+.vp-doc p.home-hero__tagline {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  color: var(--splash-text-muted) !important;
+  max-width: 640px;
+  margin: 0 auto 40px !important;
+}
+
+.home-hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home-hero__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  min-height: 48px;
+  min-width: 44px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1 !important;
+}
+
+.home-hero__action--primary {
+  background: var(--splash-brand);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(234, 78, 130, 0.25);
+}
+
+.home-hero__action--primary:hover {
+  background: var(--splash-brand-hover);
+  box-shadow: 0 10px 28px rgba(234, 78, 130, 0.35);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.home-hero__action--primary:active {
+  background: var(--splash-brand-active);
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(234, 78, 130, 0.25);
+}
+
+.home-hero__action--secondary {
+  background: transparent;
+  color: var(--splash-text);
+  border-color: var(--splash-border);
+}
+
+.home-hero__action--secondary:hover {
   border-color: var(--splash-brand);
   color: var(--splash-brand);
 }
 
-/* 让 hero 占满首屏高度 */
-.VPHero {
-  min-height: calc(100vh - var(--vp-nav-height) - 80px);
-  display: flex;
-  align-items: center;
-  padding: 40px 24px;
+.home-hero__action--secondary:active {
+  background: var(--splash-brand-soft);
 }
 
-/* 隐藏首页的 features 区域（splash 更纯净） */
-.VPFeatures {
-  display: none;
-}
-
-/* 隐藏首页的 footer，使 splash 占满首屏 */
-.VPDoc.has-aside .VPDocFooter,
-.VPLastUpdated,
-.home .VPDocFooter {
-  display: none;
-}
-
-/* Logo 区域装饰 */
-.VPHero .container .main::before {
-  content: '📦';
-  display: block;
-  font-size: 64px;
-  margin-bottom: 24px;
-  filter: drop-shadow(0 4px 12px rgba(26, 173, 25, 0.2));
-  animation: float 3s ease-in-out infinite;
+.home-hero__action svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-6px); }
 }
 
-/* 响应式 */
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__logo { animation: none; }
+  .home-hero__action { transition: none; }
+  .home-hero__action--primary:hover { transform: none; }
+}
+
+/* =============================================================
+   SECTION 通用
+   ============================================================= */
+.home-section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-section__head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.home-section__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--splash-brand);
+  margin-bottom: 12px;
+}
+
+/* 顶住 vp-doc h2 默认样式（border-top、padding-top、font-size 24px） */
+.vp-doc h2.home-section__title {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.5px !important;
+  margin: 0 0 12px !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+  color: var(--splash-text);
+}
+
+.vp-doc p.home-section__subtitle {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  color: var(--splash-text-muted) !important;
+  max-width: 640px;
+  margin: 0 auto !important;
+}
+
+/* =============================================================
+   FEATURES GRID
+   ============================================================= */
+.home-features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  background: var(--splash-card);
+  border: 1px solid var(--splash-border);
+  border-radius: var(--splash-radius);
+  padding: 28px 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  border-color: var(--splash-brand);
+}
+
+.feature-card__icon {
+  width: 36px;
+  height: 36px;
+  color: var(--splash-brand);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* 顶住 vp-doc h3 默认样式 */
+.vp-doc h3.feature-card__title {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  margin: 0 0 8px !important;
+  letter-spacing: 0.2px !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+  color: var(--splash-text);
+}
+
+.vp-doc p.feature-card__desc {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: var(--splash-text-muted) !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 960px) {
+  .home-features__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .home-features__grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-card { transition: none; }
+  .feature-card:hover { transform: none; }
+}
+
+/* =============================================================
+   TEMPLATES SHOWCASE
+   ============================================================= */
+.home-templates {
+  background: linear-gradient(180deg, #ffffff 0%, #fceff2 100%);
+  border-radius: var(--splash-radius-lg);
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 80px 32px;
+}
+
+.home-templates__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.template-card {
+  background: var(--splash-card);
+  border: 1px solid var(--splash-border);
+  border-radius: var(--splash-radius);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.template-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.template-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--splash-brand);
+  background: var(--splash-brand-soft);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  align-self: flex-start;
+  line-height: 1.5 !important;
+}
+
+.template-card__name {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--splash-text);
+  letter-spacing: -0.2px;
+}
+
+.template-card__desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--splash-text-muted);
+  margin: 0;
+}
+
+.template-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.template-card__tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #f7f8f8;
+  color: var(--splash-text);
+  border: 1px solid var(--splash-border);
+  line-height: 1.5 !important;
+}
+
+.template-card__cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--splash-brand);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 0;
+  min-height: 44px;
+  align-self: flex-start;
+  transition: gap 0.2s ease, color 0.2s ease;
+  line-height: 1.5 !important;
+}
+
+.template-card__cta:hover {
+  gap: 10px;
+  color: var(--splash-brand-hover);
+}
+
+.template-card__cta svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .home-templates__grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .template-card { transition: none; }
+  .template-card:hover { transform: none; }
+  .template-card__cta { transition: none; }
+}
+
+/* =============================================================
+   QUICK START
+   ============================================================= */
+.home-quickstart {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+  text-align: center;
+}
+
+.home-quickstart__code {
+  background: #1f1f1f;
+  color: #f7f8f8;
+  border-radius: var(--splash-radius);
+  padding: 24px;
+  font-family: ui-monospace, 'SF Mono', Menlo, 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  overflow-x: auto;
+  margin: 0 0 16px;
+  white-space: pre;
+}
+
+.home-quickstart__code-prompt { color: #f28cb3; user-select: none; }
+.home-quickstart__code-cmd { color: #f7f8f8; }
+.home-quickstart__code-comment { color: #707070; }
+
+.home-quickstart__hint {
+  font-size: 13px;
+  color: var(--splash-text-muted);
+  margin: 0 0 32px;
+}
+
+/* 顶住 vp-doc code 默认样式（背景色、padding、圆角） */
+.vp-doc .home-quickstart__hint code {
+  font-size: 12px;
+  background: #f7f8f8;
+  border: 1px solid var(--splash-border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--splash-text);
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+.home-quickstart__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =============================================================
+   响应式 — 移动端 hero 缩放
+   ============================================================= */
 @media (max-width: 640px) {
-  .VPHero .container .main .name {
-    font-size: 36px;
-  }
-  .VPHero .container .main .text {
-    font-size: 24px;
-  }
-  .VPHero .container .main .tagline {
-    font-size: 16px;
-  }
-  .VPHero .container .main::before {
-    font-size: 48px;
-  }
+  .home-hero { padding: 56px 20px 48px; }
+  .vp-doc h1.home-hero__name { font-size: 36px !important; }
+  .vp-doc p.home-hero__text { font-size: 22px !important; }
+  .vp-doc p.home-hero__tagline { font-size: 16px !important; }
+  .home-section { padding: 56px 20px; }
+  .vp-doc h2.home-section__title { font-size: 26px !important; }
+  .home-templates { padding: 56px 20px; }
+  .home-quickstart { padding: 56px 20px 96px; }
 }
