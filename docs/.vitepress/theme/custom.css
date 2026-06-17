@@ -1,6 +1,6 @@
 /* =============================================================
    文档站欢迎页样式（docs/index.md）
-   品牌色对齐 templates 的 #ea4e82（粉），不再用微信绿
+   品牌色 #6366f1（电光靛蓝），不与 templates 同步（docs 独立设计）
 
    关键约束：markdown 内容被包在 <article class="vp-doc"> 里，
    vp-doc 默认 max-width: 720px + 强 typography 样式会盖过我们的设计。
@@ -10,20 +10,20 @@
 
 :root {
   /* VitePress 品牌色覆盖（影响按钮、链接、active 状态） */
-  --vp-c-brand-1: #ea4e82;
-  --vp-c-brand-2: #f28cb3;
-  --vp-c-brand-3: #c93a6c;
-  --vp-c-brand-soft: rgba(234, 78, 130, 0.14);
+  --vp-c-brand-1: #6366f1;
+  --vp-c-brand-2: #a5b4fc;
+  --vp-c-brand-3: #4338ca;
+  --vp-c-brand-soft: rgba(99, 102, 241, 0.14);
 
-  --vp-button-brand-bg: #ea4e82;
-  --vp-button-brand-hover-bg: #d63e72;
-  --vp-button-brand-active-bg: #c13566;
+  --vp-button-brand-bg: #6366f1;
+  --vp-button-brand-hover-bg: #4f46e5;
+  --vp-button-brand-active-bg: #4338ca;
 
   /* 项目自用 token（与 templates 的 tokens.wxss 对齐） */
-  --splash-brand: #ea4e82;
-  --splash-brand-hover: #d63e72;
-  --splash-brand-active: #c13566;
-  --splash-brand-soft: rgba(234, 78, 130, 0.08);
+  --splash-brand: #6366f1;
+  --splash-brand-hover: #4f46e5;
+  --splash-brand-active: #4338ca;
+  --splash-brand-soft: rgba(99, 102, 241, 0.08);
   --splash-text: #1f1f1f;
   --splash-text-muted: #707070;
   --splash-bg: #f7f8f8;
@@ -75,7 +75,7 @@
   transform: translateX(-50%);
   width: 720px;
   height: 480px;
-  background: radial-gradient(60% 60% at 50% 0%, rgba(234, 78, 130, 0.08) 0%, transparent 70%);
+  background: radial-gradient(60% 60% at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
 }
@@ -102,7 +102,7 @@
 }
 
 .home-hero__name .accent {
-  background: linear-gradient(120deg, var(--splash-brand) 0%, #f28cb3 100%);
+  background: linear-gradient(120deg, var(--splash-brand) 0%, #a5b4fc 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -155,12 +155,12 @@
 .home-hero__action--primary {
   background: var(--splash-brand);
   color: #ffffff;
-  box-shadow: 0 6px 20px rgba(234, 78, 130, 0.25);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
 }
 
 .home-hero__action--primary:hover {
   background: var(--splash-brand-hover);
-  box-shadow: 0 10px 28px rgba(234, 78, 130, 0.35);
+  box-shadow: 0 10px 28px rgba(99, 102, 241, 0.35);
   transform: translateY(-2px);
   color: #ffffff;
 }
@@ -168,7 +168,7 @@
 .home-hero__action--primary:active {
   background: var(--splash-brand-active);
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(234, 78, 130, 0.25);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
 }
 
 .home-hero__action--secondary {
@@ -314,7 +314,7 @@
    TEMPLATES SHOWCASE
    ============================================================= */
 .home-templates {
-  background: linear-gradient(180deg, #ffffff 0%, #fceff2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
   border-radius: var(--splash-radius-lg);
   max-width: 1200px;
   margin: 0 auto 80px;
@@ -452,7 +452,7 @@
   white-space: pre;
 }
 
-.home-quickstart__code-prompt { color: #f28cb3; user-select: none; }
+.home-quickstart__code-prompt { color: #a5b4fc; user-select: none; }
 .home-quickstart__code-cmd { color: #f7f8f8; }
 .home-quickstart__code-comment { color: #707070; }
 
